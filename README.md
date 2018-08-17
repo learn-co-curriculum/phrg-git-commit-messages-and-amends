@@ -1,6 +1,6 @@
 # Git Commit Descriptions and Amends
 
-`git` is a powerful and complex CLI that manages versions of your code. This lesson explores using the `git commit` message flag twice in one commit, and `git commit --amend`.
+`git` is a powerful and complex CLI that manages versions of your code. This lesson explores using the `git commit` message option twice in one commit, and using `git commit --amend`.
 
 ## The Manual
 
@@ -24,17 +24,17 @@ git commit -m "Short subject of commit" -m "Longer, detailed explanation of why 
 
 ## Why
 
-Creating logical commits facilitates an easier code review for our team. This means they do a better job understanding your changes, offer better feedback, and make it easy for them to detect a possible bug, which can be a life saver for our application. It also creates a better git history for our project. A few weeks or months from now a developer may need to look back at the git history to identify how a feature was added.
+Creating informative commits facilitates an easier code review for our team. This means they do a better job understanding your changes, offer better feedback, and make it easy for them to detect a possible bug, which can be a life saver for our application. It also creates a better git history for our project. A few weeks or months from now a developer may need to look back at the git history to understand how a feature was implemented.
 
 ## Git Amend
 
-We just got done commiting some changes, but realize that we forgot to add one more line of functionality. What do we do?
+We just got done commiting some changes, but now realize that we forgot to add one more line of functionality. What do we do?
 
-`git` provides a command for just this scenario. `git commit --amend` will tack on more staged changes into the last commit we added. After our commit is modified, we will have to push with force to update it on Github.
+`git` provides a command for just this scenario. `git commit --amend` will tack on additional staged changes into our latest commit. After our commit is modified, we will have to push with `--force` to update it on Github.
 
 ### Example
 
-For our mammal PR, we are fixing the `#charge` method on our Rhino model. We are about to commit a change that looks like:
+For our mammal PR, we are fixing the `#charge` method on our Rhino model. We need to commit a change that looks like:
 
 ```
 $ git diff
@@ -52,7 +52,7 @@ index f802ba8..9a348fe 100644
      run
 ```
 
-But our team does not understand why a rhino starts it's charge by stomping. Let's fill them in with a commit description:
+But our team does not understand why a rhino starts its charge by stomping. Let's inform them in with a commit description:
 
 ```
 $ git add app/models/rhino.rb
@@ -108,10 +108,10 @@ hint: 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-Uh oh! We forgot that since we overwrote a commit, we have to `--force` our push up to Github. Let's try one more time:
+Uh oh! We forgot that since we want to overwrite our last commit, we have to `--force` our push up to Github. Let's try once more:
 
 ```
-$ git push -f origin rhino_branch
+$ git push --force origin rhino_branch
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
 Delta compression using up to 8 threads.
@@ -122,11 +122,11 @@ To github.com:garettarrowood/example_app.git
  + 1e71c2a...3c5ea2e rhino_branch -> rhino_branch (forced update)
 ```
 
-In the last line in the above snippet, notice that commit changed from `1e71c2a` to `3c5ea2e`. Let's look on Github to see what happened there:
+In the last line of the snippet above, notice that our commit identifer changed from `1e71c2a` to `3c5ea2e`. Let's look on Github to see what happened:
 
 ![New Git Sha](https://raw.githubusercontent.com/powerhome/phrg-git-commit-messages-and-amends/master/new-git-sha.png?raw=true "New Git Sha")
 
-Great! We've created an accurate and informative commit!
+Great! We have created an accurate and informative commit!
 
 ## Resources
 
