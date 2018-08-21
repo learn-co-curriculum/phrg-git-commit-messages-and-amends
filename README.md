@@ -28,7 +28,7 @@ Creating informative commits facilitates an easier code review for our team. Thi
 
 ## Git Amend
 
-We just got done commiting some changes, but now realize that we forgot to add one more line of functionality. What do we do?
+We just got done committing some changes, but now realize that we forgot to add one more line of functionality. What do we do?
 
 `git` provides a command for just this scenario. `git commit --amend` will tack on additional staged changes into our latest commit. After our commit is modified, we will have to push with `--force` to update it on Github.
 
@@ -72,7 +72,7 @@ And when a user clicks on the `...` it opens up with our text:
 
 ![Opened Commit Description](https://raw.githubusercontent.com/powerhome/phrg-git-commit-messages-and-amends/master/opened-commit-description.png?raw=true "Opened Commit Description")
 
-Oh wait!! We forget that our Rhinos also growl! Let's ammend this change to our last commit:
+Oh wait!! We forget that our Rhinos also growl! Let's amend this change to our last commit:
 
 ```
 $ git diff
