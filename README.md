@@ -108,10 +108,10 @@ hint: 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-Uh oh! We forgot that since we want to overwrite our last commit, we have to `--force` our push up to Github. Let's try once more:
+Uh oh! We forgot that since we want to overwrite our last commit, we have to `--force-with-lease` our push up to Github. Let's try once more:
 
 ```
-$ git push --force origin rhino_branch
+$ git push --force-with-lease origin rhino_branch
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
 Delta compression using up to 8 threads.
